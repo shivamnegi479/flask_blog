@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block body %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for( 'static',filename='assets/img/about-bg.jpg')}}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Hello {{param.admin_user}}</h1>
+                            <span class="subheading">Welcome to the DashBoard</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <h4>Add/Edit Post</h4>
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+
+                    <form id="contactForm" action="/contact" method="POST">
+                                <div class="form-floating">
+                                    <input class="form-control" id="title" type="text" name="title" value="{{post.title}}" placeholder="Enter your title..." />
+                                    <label for="name">Title</label>
+                                    
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="img_file" name="img_file" type="text" placeholder="upload the image..."  value="{{post.img_file}}" />
+                                    <label for="c">Image</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="slug" name="slug" type="text" value="{{post.slug}}" placeholder="upload the image..."  />
+                                    <label for="c">Link</label>
+                                </div>
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="content" name="content"  placeholder="Enter your content here..." style="height: 12rem" data-sb-validations="required">{{post.content}}</textarea>
+                                    <label for="message">Content</label>
+                                    
+                                </div>
+                                <p>hjbsdjn</p>
+                                <br />
+   
+                                <!-- Submit error message-->
+                                <!---->
+                                <!-- This is what your users will see when there is-->
+                                <!-- an error submitting the form-->
+
+                                <!-- Submit Button-->
+                                <button class="btn btn-primary text-uppercase " id="submit_post" type="submit">Submit</button>
+                            </form>
+
+                </div>
+                </div>    
+      </main>
+    {%endblock%}
+
+
+        

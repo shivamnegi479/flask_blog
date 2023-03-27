@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block body %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for( 'static',filename='assets/img/about-bg.jpg')}}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Hello {{param.admin_user}}</h1>
+                            <span class="subheading">Welcome to the DashBoard</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+
+                    <div class="my-4">
+                        <span><h6>Basic Actions</h6></span>
+                    <span ><a class="btn ed_del btn-primary text-uppercase" href="/edit/0">Add a new post</a></span>
+                    <span ><a class="btn ed_del btn-primary text-uppercase" href="/logout">Logout</a></span>
+                    </div>
+                    <div class="my-4">
+                        <span><h6>File Upload</h6></span>
+                    
+                        <form action="/uploader" method="post" enctype = "multipart/form-data">
+                            <input type="file" name="file1" id="" >
+                            <span ><input type="submit" value="Submit"></span>
+
+                        </form>
+                    </div>
+
+                    
+<table>
+    <tr>
+      <th>S.No</th>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+   
+    {% for post in post%}
+ 
+    <tr>
+      <td>{{post.s_no}}</td>
+      <td>{{post.title}}</td>
+      <td>{{post.date}}</td>
+      <td><a class="btn ed_del btn-primary text-uppercase" href="/edit/{{post.s_no}}">Edit</a></td>
+      <td><a class="btn ed_del btn-primary text-uppercase" href="/delete/{{post.s_no}}">Delete</a></td>
+    </tr>
+     {% endfor %}
+  </table>
+                </div>
+            </div>
+        </main>
+    {%endblock%}
+
+
+        

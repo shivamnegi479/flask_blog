@@ -1,0 +1,17 @@
+{
+    "params":{
+        "local_server":"True",
+        "local_uri":"mysql://root:@localhost/flask1",
+        "server_url":"mysql://root:@prod/flask1",
+        "git_url":"https://github.com/shivamnegi479",
+        "fb_url":"https://www.linkedin.com/in/shivam-negi-037495152/",
+        "heading":"Shivay_test",
+        "gmail_user":"shivam.negi@abacasys.com",
+        "gmail_pass":"vvcaogmlwledwgrv",
+        "admin":"Shivam",
+        "no_of_post":3,
+        "admin_user":"admin",
+        "admin_pass":"admin",
+        "upload_loacton":"D:\\Flask\\project1\\static"
+    }
+}
